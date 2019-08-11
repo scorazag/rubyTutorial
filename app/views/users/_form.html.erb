@@ -1,27 +1,17 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

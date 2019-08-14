@@ -1,9 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+ants:
+  content: "Oh, is that what you want? Because that's how you get ants!"
+  created_at: <%= 2.years.ago %>
+  user: sergio1
 
-one:
-  content: MyText
-  user_id: 1
+zone:
+  content: "Danger zone!"
+  created_at: <%= 3.days.ago %>
+  user: sergio1
 
-two:
-  content: MyText
-  user_id: 1
+tone:
+  content: "I'm sorry. Your words made sense, but your sarcastic tone did not."
+  created_at: <%= 10.minutes.ago %>
+  user: sergio1
+
+van:
+  content: "Dude, this van's, like, rolling probable cause."
+  created_at: <%= 4.hours.ago %>
+  user: sergio1
